@@ -7,6 +7,7 @@ const app = express();
 const expressLayouts = require("express-ejs-layouts");
 
 const indexRouter = require("./routes/index");
+const projectsRouter = require("./routes/projects");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -15,6 +16,7 @@ app.use(expressLayouts);
 app.use(express.static("public"));
 
 app.use("/", indexRouter);
+app.use("/projects", projectsRouter);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running");
