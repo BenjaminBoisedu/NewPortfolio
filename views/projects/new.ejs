@@ -1,15 +1,42 @@
 <h2>New Project</h2>
-<form action="/projects" method="post">
-  <p>
-    <input type="text" name="title" placeholder="Project Title" />
-  </p>
-  <p>
-    <textarea name="description" placeholder="Project Description"></textarea>
-  </p>
-  <p>
-    <input type="date" name="date" placeholder="Project Date" />
-  </p>
-  <p>
-    <input type="submit" value="Add Project" />
-  </p>
-</form>
+<div>
+  <form action="/projects" method="post">
+    <p>
+      <input
+        type="text"
+        name="title"
+        placeholder="Project Title"
+        value="<%=
+      project.title %>"
+      />
+    </p>
+    <p>
+      <textarea
+        name="description"
+        placeholder="Project Description"
+        value="<%= project.description %>"
+      ></textarea>
+    </p>
+    <p>
+      <input
+        type="text"
+        name="tag"
+        placeholder="Tag's project"
+        value="<%= project.tag %>"
+      />
+    </p>
+    <p>
+      <input
+        type="date"
+        name="date"
+        placeholder="Project Date"
+        value="<%=
+      project.date %>"
+      />
+    </p>
+    <button type="submit">Add</button>
+    <p>
+      <a href="/projects">Back</a>
+    </p>
+  </form>
+</div>

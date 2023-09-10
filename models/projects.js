@@ -5,10 +5,11 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  description: String,
+  description: {
+    type: String,
+  },
   tag: {
     type: String,
-    required: true,
   },
   createdAt: {
     type: Date,
