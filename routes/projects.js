@@ -40,4 +40,13 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const project = await Project.findById(req.params.id);
+    res.render("projects/show", { project: project });
+  } catch {
+    res.redirect("/");
+  }
+});
+
 module.exports = router;
