@@ -3,9 +3,16 @@ const router = express.Router();
 const Project = require("../models/projects");
 
 router.get("/", async (req, res) => {
+  let searchOptions = {};
+  if (req.query.name != null && req.query.name !== "") {
+    searchOptions.name = new RegExp(req.query.name, "i");
+  }
   try {
     const projects = await Project.find({});
-    res.render("projects/index", { projects: projects });
+    res.render("projects/index", {
+      projects: projects,
+      searchOptions: req.query,
+    });
   } catch {
     res.redirect("/");
   }
