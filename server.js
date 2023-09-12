@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 
 const indexRouter = require("./routes/index");
 const projectsRouter = require("./routes/projects");
+const meRouter = require("./routes/me");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -19,6 +20,7 @@ app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 
 app.use("/", indexRouter);
 app.use("/projects", projectsRouter);
+app.use("/me", meRouter);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running");
