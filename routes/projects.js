@@ -49,4 +49,20 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.post("/:id", async (req, res) => {
+  let project;
+  try {
+    project = await Project.findById(req.params.id);
+    await project.deleteOne();
+    res.redirect("/projects");
+    console.log("Deleted project");
+  } catch {
+    if (project == null) {
+      res.redirect("/");
+    } else {
+      res.redirect(`/projects/${project.id}`);
+    }
+  }
+});
+
 module.exports = router;
