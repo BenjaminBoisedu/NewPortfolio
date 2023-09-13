@@ -4,11 +4,15 @@ const Project = require("../models/projects");
 
 router.get("/", async (req, res) => {
   let searchOptions = {};
-  if (req.query.title != null && req.query.title !== "") {
+  if (
+    (req.query.title != null && req.query.title !== "") ||
+    (req.query.tag != null && req.query.tag !== "")
+  ) {
     searchOptions.title = new RegExp(req.query.title, "i");
+    searchOptions.tag = new RegExp(req.query.tag, "i");
   }
   try {
-    const projects = await Project.find({});
+    const projects = await Project.find(searchOptions);
     res.render("projects/index", {
       projects: projects,
       searchOptions: req.query,
