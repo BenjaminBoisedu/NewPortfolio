@@ -34,15 +34,10 @@
       project.date %>"
       />
     </p>
-    <p>
-      <input
-        type="file"
-        name="image"
-        placeholder="Project Image"
-        value="<%=
-      project.image %>"
-      />
-    </p>
+    <div>
+      <label>Upload Image</label>
+      <input type="file" name="img" class="filepond" />
+    </div>
     <button type="submit">Create Project</button>
     <p>
       <a href="/projects">Back</a>

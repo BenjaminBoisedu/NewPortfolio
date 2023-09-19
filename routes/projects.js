@@ -1,8 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const Project = require("../models/projects");
-const fs = require("fs");
 const path = require("path");
+const fs = require("fs");
+const uploadPath = path.join("public", Project.ProjectImageBasePath);
+const multer = require("multer");
+const imageMimeTypes = ["image/jpeg", "image/png", "image/gif"];
+const upload = multer({
+  dest: uploadPath,
+  fileFilter: (req, file, callback) => {
+    callback(null, true);
+  },
+});
 
 router.get("/", async (req, res) => {
   let searchOptions = {};
@@ -28,26 +37,33 @@ router.get("/new", (req, res) => {
   res.render("projects/new", { project: new Project() });
 });
 
-router.post("/", async (req, res) => {
+router.post("/", upload.single("img"), async (req, res) => {
+  const fileName = req.file != null ? req.file.filename : null;
   const project = new Project({
     title: req.body.title,
     description: req.body.description,
     tag: req.body.tag,
     createdAt: new Date(),
+    ProjectImage: fileName,
   });
   try {
     const newProject = await project.save();
-    // res.redirect(`projects/${newProject.id}`);
-    res.redirect("projects");
+    res.redirect(`projects/${newProject.id}`);
     console.log(newProject);
   } catch {
     res.render("projects/new", {
+      removeProjectImage: removeProjectImage(fileName),
       project: project,
       errorMessage: "Error creating project",
     });
   }
 });
 
+function removeProjectImage(fileName) {
+  fs.unlink(path.join(uploadPath, fileName), (err) => {
+    if (err) console.error(err);
+  });
+}
 router.get("/:id", async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
