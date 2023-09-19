@@ -66,11 +66,11 @@ function checkFileType(file, cb) {
   }
 }
 
-app.get("/new", (req, res) => {
-  res.render("new");
+app.get("/upload", (req, res) => {
+  res.render("upload");
 });
 
-app.post("/new", upload.single("image"), (req, res) => {
+app.post("/upload", upload.single("image"), (req, res) => {
   console.log(req.file);
-  res.send("test");
+  res.render("index");
 });
