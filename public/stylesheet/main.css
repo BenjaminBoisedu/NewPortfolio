@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -97,7 +98,21 @@ body .profils .about {
   align-items: center;
   margin-bottom: 1em;
   width: 100%;
-  height: 84vh;
+  height: 75vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 5em;
+}
+
+body .profils .about .about-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 100%;
+  height: 75vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 5em;
 }
 
 body .profils .about .about-txt h1 {

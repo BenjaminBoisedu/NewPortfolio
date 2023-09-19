@@ -1,6 +1,6 @@
 <h2>New Project</h2>
 <div>
-  <form action="/projects" method="post">
+  <form action="/projects" method="post" enctype="multipart/form-data">
     <p>
       <input
         type="text"
@@ -34,7 +34,16 @@
       project.date %>"
       />
     </p>
-    <button type="submit">Add</button>
+    <p>
+      <input
+        type="file"
+        name="image"
+        placeholder="Project Image"
+        value="<%=
+      project.image %>"
+      />
+    </p>
+    <button type="submit">Create Project</button>
     <p>
       <a href="/projects">Back</a>
     </p>

@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Project = require("../models/projects");
+const fs = require("fs");
+const path = require("path");
 
 router.get("/", async (req, res) => {
   let searchOptions = {};
@@ -25,11 +27,13 @@ router.get("/", async (req, res) => {
 router.get("/new", (req, res) => {
   res.render("projects/new", { project: new Project() });
 });
+
 router.post("/", async (req, res) => {
   const project = new Project({
     title: req.body.title,
     description: req.body.description,
     tag: req.body.tag,
+    createdAt: new Date(),
   });
   try {
     const newProject = await project.save();

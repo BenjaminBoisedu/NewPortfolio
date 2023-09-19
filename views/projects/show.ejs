@@ -1,8 +1,11 @@
-<h3><%= project.title %></h3>
-<% if (project.description) { %>
-<p><%= project.description %></p>
-<% } %> <% if (project.tag) { %>
-<p><%= project.tag %></p>
-<% } %> <% if (project.date) { %>
-<p><%= project.date %></p>
-<% } %>
+<div class="projects">
+  <h3><%= project.title %></h3>
+  <div class="project-img">
+    <img src="<%= project.image %>" alt="<%= project.title %>" />
+  </div>
+  <div class="project-txt">
+    <p><%= project.description %></p>
+    <p><%= project.tag %></p>
+    <p><%= project.date %></p>
+  </div>
+</div>
