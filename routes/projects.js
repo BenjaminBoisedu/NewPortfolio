@@ -48,7 +48,8 @@ router.post("/", upload.single("img"), async (req, res) => {
   });
   try {
     const newProject = await project.save();
-    res.redirect(`projects/${newProject.id}`);
+    // res.redirect(`projects/${newProject.id}`);
+    res.redirect(`projects`);
     console.log(newProject);
   } catch {
     res.render("projects/new", {

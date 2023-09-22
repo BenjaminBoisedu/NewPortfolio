@@ -16,16 +16,13 @@ h2 {
 /* Header */
 
 header {
-  padding: 1em;
+  /* padding: 1em; */
   margin-bottom: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 header a {
@@ -36,6 +33,9 @@ header a {
   margin: 0.5em;
 }
 
+header a:hover {
+  cursor: crosshair;
+}
 header a.active {
   color: #fff;
 }
@@ -71,7 +71,7 @@ body {
   background-position: center;
   transition: all 0.5s ease-in-out;
 }
-
+/* Profil page */
 body .profils {
   display: flex;
   flex-direction: row;
@@ -105,14 +105,30 @@ body .profils .about {
 
 body .profils .about .about-txt {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-bottom: 1em;
   width: 100%;
   height: 75vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   padding-bottom: 5em;
+}
+
+body .profils .about .about-txt .about-img {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  margin: 1em;
+  z-index: 1;
+  left: 0;
+  top: 20%;
+}
+
+body .profils .about .about-txt .about-img img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1em;
 }
 
 body .profils .about .about-txt h1 {
@@ -122,6 +138,12 @@ body .profils .about .about-txt h1 {
 body .profils .about .about-txt h2 {
   font-family: nazalisation-rg;
   font-size: 2em;
+}
+
+body .profils .about .about-txt .txt {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
 }
 
 body .profils .socials {
@@ -134,4 +156,28 @@ body .profils .socials {
   height: 10em;
 }
 
+/* Project catégories */
+body .project-cat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+body .project-cat .img-3d img {
+  width: 20em;
+  /* border-radius: 50%; */
+  margin: 1em;
+}
+
 /* Footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1em;
+  margin-top: 1em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
