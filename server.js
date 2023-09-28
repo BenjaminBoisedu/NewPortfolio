@@ -10,6 +10,7 @@ const mutler = require("multer");
 
 const indexRouter = require("./routes/index");
 const projectsRouter = require("./routes/projects");
+const contactRouter = require("./routes/contact");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 
 app.use("/", indexRouter);
 app.use("/projects", projectsRouter);
+app.use("/me", contactRouter);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running");

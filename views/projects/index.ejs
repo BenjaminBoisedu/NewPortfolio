@@ -1,50 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Mes différents projets</h1>
-    <form action="/projects" method="GET">
-      <label>Name's project</label>
-      <input
-        type="text"
-        name="title"
-        placeholder="Search..."
-        value="<%= searchOptions.title %>"
-      />
-      <label>Tag's project</label>
-      <input
-        type="text"
-        name="tag"
-        placeholder="Search..."
-        value="<%= searchOptions.tag %>"
-      />
-      <button type="submit">Search</button>
-    </form>
-    <br />
-    <div class="project-all">
-      <% projects.forEach((project) => { %>
-      <div class="project-infos">
-        <div class="ProjectImage">
-          <img
-            height="fit-content"
-            width="fit-content"
-            src="<%= project.ProjectImagePath %>"
-          />
-        </div>
+<body>
+  <h1>Mes différents projets</h1>
+  <form action="/projects" method="GET">
+    <label>Name's project</label>
+    <input
+      type="text"
+      name="title"
+      placeholder="Search..."
+      value="<%= searchOptions.title %>"
+    />
+    <label>Tag's project</label>
+    <input
+      type="text"
+      name="tag"
+      placeholder="Search..."
+      value="<%= searchOptions.tag %>"
+    />
+    <button type="submit">Search</button>
+  </form>
+  <br />
+  <div class="project-all">
+    <% projects.forEach((project) => { %>
+    <div class="project-infos">
+      <div class="ProjectImage">
+        <img
+          height="300px"
+          width="400px"
+          src="<%= project.ProjectImagePath %>"
+        />
+      </div>
+      <div class="infos-btn">
         <div class="infos">
           <div class="project-title">
             <h3><%= project.title %></h3>
           </div>
           <div class="desc-tag-date">
-            <div class="desc">
-              <p><%= project.description %></p>
-            </div>
             <div class="tag">
               <p><%= project.tag %></p>
+            </div>
+            <div class="desc">
+              <p><%= project.description %></p>
             </div>
             <div class="date">
               <p><%= project.date %></p>
@@ -53,7 +47,6 @@
         </div>
         <div class="all-btn">
           <a href="/projects/<%= project._id %>">Details</a>
-          <a href="/projects/<%= project._id %>/edit">Edit</a>
           <form
             action="/projects/<%= project._id %>?_method=DELETE"
             method="post"
@@ -62,8 +55,7 @@
           </form>
         </div>
       </div>
-      <% }) %>
     </div>
-    <br />
-  </body>
-</html>
+    <% }) %>
+  </div>
+</body>
