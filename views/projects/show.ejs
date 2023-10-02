@@ -1,12 +1,22 @@
 <div class="projects">
-  <h3><%= project.title %></h3>
   <div class="project-img">
-    <img src="<%= project.image %>" alt="<%= project.title %>" />
+    <img src="<%= project.ProjectImagePath %>" alt="<%= project.title %>" />
   </div>
-  <div class="project-txt">
-    <p><%= project.description %></p>
-    <p><%= project.tag %></p>
-    <p><%= project.date %></p>
-    <img src="<%= project.ProjectImagePath %>" alt="ProjectImage" />
+  <div class="infos">
+    <div class="titre">
+      <h1><%= project.title %></h1>
+    </div>
+    <div class="project-txt">
+      <div class="tag">
+        <p><%= project.tag %></p>
+      </div>
+      <div class="description">
+        <p><%= project.description %></p>
+      </div>
+      <div class="date">
+        <p><%= project.date %></p>
+      </div>
+    </div>
+    <a href=""><%= project.title %></a>
   </div>
 </div>

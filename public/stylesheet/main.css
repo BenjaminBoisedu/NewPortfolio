@@ -6,7 +6,6 @@ html {
   font-size: 16px;
   font-family: nazalisation-rg;
   color: #fff;
-  scroll-behavior: smooth;
 }
 
 * {
@@ -18,6 +17,11 @@ html {
 h1,
 h2 {
   font-family: nazalisation-rg;
+}
+
+h3,
+p {
+  font-family: kingsman-font;
 }
 
 /* Header */
@@ -66,6 +70,12 @@ header nav ul li a {
   font-family: nazalisation-rg;
   font-size: 1.5em;
   color: #fff;
+}
+
+@media (min-width: 522px) {
+  header nav l {
+    display: none;
+  }
 }
 
 /* Body */
@@ -179,6 +189,8 @@ body .profils .about .about-txt .txt .network a img {
   justify-content: center;
 }
 
+/* Project Page */
+
 .form {
   display: flex;
   flex-direction: row;
@@ -198,21 +210,6 @@ body .profils .about .about-txt .txt .network a img {
   background-color: #00000021;
   box-shadow: 0 0 1em #fff;
   animation: linear 1 0.5s bounceIn;
-  animation: linear 1 0.5s slideInLeft;
-}
-
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  60% {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0%);
-  }
 }
 
 @keyframes bounceIn {
@@ -262,7 +259,7 @@ body .profils .about .about-txt .txt .network a img {
   flex-direction: row-reverse;
   flex-wrap: wrap;
   height: fit-content;
-  width: 45%;
+  width: 55%;
   justify-content: center;
   margin: 1em;
   background-image: url("/stylesheet/img/Bg-projet.png");
@@ -309,7 +306,6 @@ body .profils .about .about-txt .txt .network a img {
 
 .project-title {
   font-family: nazalisation-rg;
-  /* font-size: 2em; */
   margin-bottom: 1em;
 }
 
@@ -382,6 +378,134 @@ body .profils .about .about-txt .txt .network a img {
   box-shadow: 0 0 1em #fff;
 }
 
+/* Details Page */
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  margin: 1em;
+  transition: all 0.5s ease-in-out;
+  border-radius: 1em;
+}
+
+.projects .project-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  margin: 1em;
+  padding: 1em;
+  width: 50%;
+}
+
+.projects .infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1em;
+  padding: 1em;
+  width: 50%;
+  border-radius: 1em;
+  transition: all 0.5s ease-in-out;
+}
+
+.infos a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #fff;
+  padding: 0.2em;
+  background-color: #00000021;
+  border-radius: 0.5em;
+  animation: linear 1 0.5s bounceIn;
+}
+
+.tag {
+  margin: 1em;
+}
+
+.projects .project-img img {
+  width: 100%;
+  border-radius: 1em;
+  margin: 1em;
+}
+
+/* Contact Page  */
+
+.Allcontact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 1em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000021;
+  border-radius: 1em;
+  box-shadow: 0 0 1em #fff;
+  transition: all 0.5s ease-in-out;
+  padding: 2em;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+
+.Mail a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #fff;
+  padding: 0.2em;
+  background-color: #00000021;
+  border-radius: 0.5em;
+  animation: linear 1 0.5s bounceIn;
+  align-items: center;
+}
+
+.Mail a:hover {
+  background-color: #00000021;
+  color: #fff;
+  box-shadow: 0 0 1em #fff;
+}
+.container > div > a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #fff;
+  padding: 0.2em;
+  background-color: #00000021;
+  border-radius: 0.5em;
+  animation: linear 1 0.5s bounceIn;
+  display: flex;
+  align-items: center;
+}
+
+.container > div > a:hover {
+  background-color: #00000021;
+  color: #fff;
+  box-shadow: 0 0 1em #fff;
+}
+
+.container > div > a > img {
+  width: 1.5em;
+  margin: 0.5em;
+  background-color: #fff;
+  color: #fff;
+  border-radius: 50%;
+}
+
 /* Footer */
 
 footer {
@@ -393,4 +517,36 @@ footer {
   padding: 1em;
   margin-top: 7.8rem;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.links .network {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.links .network a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #fff;
+  padding: 0.2em;
+  background-color: #00000021;
+  border-radius: 0.5em;
+  animation: linear 1 0.5s bounceIn;
+}
+
+.links .network a:hover {
+  background-color: #00000021;
+  color: #fff;
+  box-shadow: 0 0 1em #fff;
+}
+
+.links .network a img {
+  width: 1.5em;
+  margin: 0.5em;
+  background-color: #fff;
+  color: #fff;
+  border-radius: 50%;
 }
