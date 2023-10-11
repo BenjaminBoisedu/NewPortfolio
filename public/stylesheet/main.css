@@ -72,12 +72,6 @@ header nav ul li a {
   color: #fff;
 }
 
-@media (min-width: 522px) {
-  header nav l {
-    display: none;
-  }
-}
-
 /* Body */
 
 body {
@@ -151,11 +145,11 @@ body .profils .about .about-txt .about-img img {
 
 body .profils .about .about-txt h1 {
   font-family: nazalisation-rg;
-  font-size: 6em;
+  font-size: 400%;
 }
 body .profils .about .about-txt h2 {
   font-family: nazalisation-rg;
-  font-size: 2em;
+  font-size: 100%;
 }
 
 body .profils .about .about-txt .txt {
