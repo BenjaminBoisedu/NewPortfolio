@@ -1,63 +1,52 @@
 <body>
-  <div class="titre">
-    <h1>Made in Benjamin</h1>
-  </div>
-  <div class="form">
-    <form action="/projects" method="GET">
-      <input
-        type="text"
-        name="title"
-        placeholder="Nom du projet"
-        value="<%= searchOptions.title %>"
-      />
-      <input
-        type="text"
-        name="tag"
-        placeholder="Tag des projets"
-        value="<%= searchOptions.tag %>"
-      />
-      <button type="submit">Search</button>
-    </form>
-  </div>
-  <br />
-  <div class="project-all">
-    <% projects.forEach((project) => { %>
-    <div class="project-infos">
-      <div class="ProjectImage">
-        <img
-          height="300px"
-          width="400px"
-          src="<%= project.ProjectImagePath %>"
-        />
-      </div>
-      <div class="infos-btn">
-        <div class="infos">
-          <div class="project-title">
-            <h3><%= project.title %></h3>
+  <div class="all">
+
+    <div class="titre">
+      <h1>Made in Benjamin</h1>
+    </div>
+    <div class="form">
+      <form action="/projects" method="GET">
+        <input type="text" name="title" placeholder="Nom du projet" value="<%= searchOptions.title %>" />
+        <input type="text" name="tag" placeholder="Tag des projets" value="<%= searchOptions.tag %>" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <br />
+    <div class="project-all">
+      <% projects.forEach((project)=> { %>
+        <div class="project-infos">
+          <div class="ProjectImage">
+            <img height="300px" width="400px" src="<%= project.ProjectImagePath %>" />
           </div>
-          <div class="desc-tag-date">
-            <div class="tag">
-              <p><%= project.tag %></p>
-            </div>
-            <!-- <div class="desc">
+          <div class="infos-btn">
+            <div class="infos">
+              <div class="project-title">
+                <h3>
+                  <%= project.title %>
+                </h3>
+              </div>
+              <div class="desc-tag-date">
+                <div class="tag">
+                  <p>
+                    <%= project.tag %>
+                  </p>
+                </div>
+                <!-- <div class="desc">
               <p><%= project.description %></p>
             </div> -->
-            <div class="date">
-              <p><%= project.date %></p>
+                <div class="date">
+                  <p>
+                    <%= project.date %>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="all-btn">
+              <a href="/projects/<%= project._id %>">Details</a>
             </div>
           </div>
         </div>
-        <div class="all-btn">
-          <a href="/projects/<%= project._id %>">Details</a>
-          <form
-            action="/projects/<%= project._id %>?_method=DELETE"
-            method="post"
-          >
-            <button type="submit">Delete</button>
-          </form>
-        </div>
-      </div>
+        <% }) %>
     </div>
-    <% }) %>
   </div>
 </body>

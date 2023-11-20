@@ -47,8 +47,36 @@ header a {
 header a:hover {
   cursor: crosshair;
 }
+
 header a.active {
   color: #fff;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header nav .all-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+header nav .logo-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
 }
 
 header nav ul {
@@ -63,6 +91,12 @@ header nav ul {
 
 header nav ul li {
   margin: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
 }
 
 header nav ul li a {
@@ -70,17 +104,35 @@ header nav ul li a {
   font-family: nazalisation-rg;
   font-size: 1.5em;
   color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+
+}
+
+header nav ul li a h4 {
+  font-family: nazalisation-rg;
+  font-size: 1em;
+  color: #fff;
+}
+
+header nav ul li a img {
+  width: 1.5em;
+  margin: 0.5em;
+  color: #fff;
+  border-radius: 50%;
+  filter: invert(1);
 }
 
 /* Body */
 
 body {
-  background: linear-gradient(
-    0deg,
-    rgb(18, 18, 19) 0%,
-    rgb(22, 22, 22) 0%,
-    rgba(23, 23, 23, 1) 100%
-  );
+  background: linear-gradient(0deg,
+      rgb(18, 18, 19) 0%,
+      rgb(22, 22, 22) 0%,
+      rgba(23, 23, 23, 1) 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -88,6 +140,7 @@ body {
   transition: all 0.5s ease-in-out;
   height: 100vh;
 }
+
 /* Profil page */
 body .profils {
   display: flex;
@@ -147,6 +200,7 @@ body .profils .about .about-txt h1 {
   font-family: nazalisation-rg;
   font-size: 400%;
 }
+
 body .profils .about .about-txt h2 {
   font-family: nazalisation-rg;
   font-size: 100%;
@@ -191,6 +245,7 @@ body .profils .about .about-txt .txt .network a img {
   justify-content: center;
   align-items: center;
 }
+
 .form input {
   width: 10em;
   height: 1em;
@@ -211,10 +266,12 @@ body .profils .about .about-txt .txt .network a img {
     transform: scale(0.1);
     opacity: 0;
   }
+
   60% {
     transform: scale(1.2);
     opacity: 1;
   }
+
   100% {
     transform: scale(1);
   }
@@ -325,6 +382,7 @@ body .profils .about .about-txt .txt .network a img {
   margin-top: auto;
   margin-bottom: 1em;
 }
+
 .all-btn a {
   text-decoration: none;
   font-size: 1.2em;
@@ -340,10 +398,12 @@ body .profils .about .about-txt .txt .network a img {
     transform: scale(0.1);
     opacity: 0;
   }
+
   60% {
     transform: scale(1.2);
     opacity: 1;
   }
+
   100% {
     transform: scale(1);
   }
@@ -435,27 +495,17 @@ body .profils .about .about-txt .txt .network a img {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 1em;
+  height: 52vh;
 }
 
-.container {
+.contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #00000021;
   border-radius: 1em;
-  box-shadow: 0 0 1em #fff;
+  /* box-shadow: 0 0 1em #fff; */
   transition: all 0.5s ease-in-out;
-  padding: 2em;
-}
-
-.container > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 1em;
 }
 
 .Mail a {
@@ -474,7 +524,8 @@ body .profils .about .about-txt .txt .network a img {
   color: #fff;
   box-shadow: 0 0 1em #fff;
 }
-.container > div > a {
+
+.contact>div>a {
   text-decoration: none;
   font-size: 1.2em;
   color: #fff;
@@ -486,18 +537,27 @@ body .profils .about .about-txt .txt .network a img {
   align-items: center;
 }
 
-.container > div > a:hover {
+.contact>div>a:hover {
   background-color: #00000021;
   color: #fff;
   box-shadow: 0 0 1em #fff;
 }
 
-.container > div > a > img {
+.contact>div>a>img {
   width: 1.5em;
   margin: 0.5em;
   background-color: #fff;
   color: #fff;
   border-radius: 50%;
+}
+
+.network {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
 }
 
 /* Footer */
@@ -543,4 +603,174 @@ footer {
   background-color: #fff;
   color: #fff;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 1044px) {
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    transition: all 0.5s ease-in-out;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .container header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    height: 100vh;
+  }
+
+  .logo-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .container header a {
+    font-size: 1em;
+  }
+
+  .container header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .container header nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: fit-content;
+  }
+
+  .container header nav ul li {
+    margin: 0.5em;
+    font-size: x-small;
+  }
+
+  .container header nav ul li a {
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+
+  .container header nav ul li a h4 {
+    display: none;
+  }
+
+  .container header nav ul li a img {
+    width: 3.5em;
+    margin: 0.5em;
+    color: #fff;
+    border-radius: 50%;
+    filter: invert(1);
+  }
+
+  .container .intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+
+  }
+
+  .txt {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-img {
+    display: none;
+  }
+
+  .nom {
+    font-size: x-small;
+  }
+
+  .all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .all .titre {
+    font-size: xx-small;
+  }
+
+  .all .form {
+    display: none;
+  }
+
+
+
+  .all .project-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .all .project-all .project-infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .all .project-all .project-infos .ProjectImage {
+    display: none;
+  }
+
+  .projects {
+    flex-direction: column;
+  }
+
+  .projects .project-img {
+    width: 81%;
+  }
+
+
+  .network {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+
 }
