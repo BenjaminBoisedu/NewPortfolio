@@ -763,6 +763,10 @@ footer {
     width: 81%;
   }
 
+  .projects .project-img img {
+    margin: 0;
+  }
+
 
   .network {
     display: flex;
@@ -773,4 +777,7 @@ footer {
 
   }
 
+  footer {
+    margin-top: 2.8rem;
+  }
 }
