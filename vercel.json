@@ -1,4 +1,3 @@
 {
-  "buildCommand": "npm run dev",
-  "framework": "express js"
+  "buildCommand": "npm run dev"
 }
